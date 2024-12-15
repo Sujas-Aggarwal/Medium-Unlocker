@@ -1,0 +1,25 @@
+{
+    "name":"Medium Unlocker",
+    "version":"1.0",
+    "description":"Unlock Medium articles for free",
+    "manifest_version":3,
+    "permissions": ["activeTab","scripting"],
+    "action": {
+        "default_icon": {
+            "16": "images/logo.png",
+            "48": "images/logo.png",
+            "128": "images/logo.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*.medium.com/*"],
+            "js": ["content.js"]
+        },
+        {
+            "matches": ["*://*.freedium.cfd/*"],
+            "js": ["anti-content.js"]
+        }
+    ]
+
+}
