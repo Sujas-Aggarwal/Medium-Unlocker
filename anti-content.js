@@ -22,8 +22,8 @@ a.style.right = "20px";
 a.style.zIndex = "9999";
 a.style.backgroundColor = "white";
 a.style.padding = "0px";
-a.style.width = "60px";
-a.style.height = "60px";
+a.style.width = "50px";
+a.style.height = "50px";
 a.style.borderRadius = "5px";
 a.style.transition = "all 0.3s ease";
 a.addEventListener("mouseover", () => {
@@ -36,4 +36,10 @@ a.style.overflow = "hidden";
 a.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.2)";
 a.appendChild(img);
 a.href = url.split("https://freedium.cfd/")[1];
+a.title = "Press ' to go to original";
 body.appendChild(a);
+document.addEventListener("keydown", (e) => {
+  if (e.key === "'") {
+    a.click();
+  }
+});

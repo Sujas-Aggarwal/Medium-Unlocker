@@ -21,8 +21,8 @@ if (isPremium) {
   a.style.zIndex = "9999";
   a.style.backgroundColor = "white";
   a.style.padding = "0px";
-  a.style.width = "60px";
-  a.style.height = "60px";
+  a.style.width = "50px";
+  a.style.height = "50px";
   a.style.borderRadius = "5px";
   a.style.transition = "all 0.3s ease";
   a.addEventListener("mouseover", () => {
@@ -38,5 +38,11 @@ if (isPremium) {
   a.onclick = () => {
     a.href += "?scroll=" + Math.round(window.scrollY).toString();
   };
+  a.title = "Press ' to unlock the article";
   body.appendChild(a);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "'") {
+      a.click();
+    }
+  });
 }
